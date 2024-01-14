@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -20,9 +20,10 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - pytorch >=1.4.0
+    - pytorch >=1.4.0 #Currently not avalaible for Windows
     - onnx >=1.6.0
-    - torchvision >=0.9.0
+    - torchvision >=0.9.0 #Currently not avalaible for Windows
+    - __unix  # [unix]
 
 test:
   imports:
