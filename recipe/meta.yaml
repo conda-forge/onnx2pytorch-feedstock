@@ -1,5 +1,5 @@
 {% set name = "onnx2pytorch" %}
-{% set version = "0.4.1" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/onnx2pytorch-{{ version }}.tar.gz
-  sha256: f935f6b162fc2db4111b8e2948dca23f5e698da0a8a50a1771299c08754becf3
+  sha256: 22ad0ce17fba8a996480ef816ead2ca4c1c66a6afd5e9bb5341a96d47c280ebf
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -38,7 +38,7 @@ about:
   summary: Library to transform onnx model to pytorch.
   license: Apache-2.0
   license_file: LICENSE
-  description: | 
+  description: |
     A library to transform ONNX model to PyTorch. This library enables use of PyTorch backend and all of its great features for manipulation of neural networks.
 
 extra:
