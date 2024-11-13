@@ -1,4 +1,3 @@
-{% set python_min = "3.6" %}
 {% set name = "onnx2pytorch" %}
 {% set version = "0.5.1" %}
 
