@@ -1,5 +1,5 @@
 {% set name = "onnx2pytorch" %}
-{% set version = "0.5.1" %}
+{% set version = "0.5.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,18 +7,18 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/onnx2pytorch-{{ version }}.tar.gz
-  sha256: 5c3ddf004838e67793817751affb426d77955290e473b492a058fc6edcee8d14
+  sha256: 25d4a1061039baf44448ad64cf68388e0e0462f40f827ae68da43691276d1257
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
-   # - setuptools
+    - setuptools
   run:
     - python >={{ python_min }}
     - pytorch >=1.4.0 #Currently not avalaible for Windows
