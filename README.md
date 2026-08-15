@@ -16,10 +16,11 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=21276&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/onnx2pytorch-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/onnx2pytorch-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/onnx2pytorch-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -42,31 +43,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `onnx2pytorch` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install onnx2pytorch
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install onnx2pytorch
 ```
 
-It is possible to list all of the versions of `onnx2pytorch` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add onnx2pytorch
+# for installing globally
+pixi global install onnx2pytorch
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `onnx2pytorch` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search onnx2pytorch --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search onnx2pytorch --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search onnx2pytorch --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -78,6 +121,8 @@ mamba repoquery whoneeds onnx2pytorch --channel conda-forge
 # List dependencies of `onnx2pytorch`:
 mamba repoquery depends onnx2pytorch --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
