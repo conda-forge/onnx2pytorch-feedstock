@@ -1,30 +1,29 @@
 {% set name = "onnx2pytorch" %}
-{% set version = "0.5.3" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/onnx2pytorch-{{ version }}.tar.gz
-  sha256: 28cf3efff7a7f13144d83bfe24d110ca3329a3bd11e568e99fbaf3bc75f6f7c0
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/onnx2pytorch-{{ version }}.tar.gz
+  sha256: b38762a1426944e1273e808a361011358895dbe7cbd87f2d762e0f058e98afa8
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python {{ python_min }}.*
     - pip
     - setuptools
   run:
     - python >={{ python_min }}
-    - pytorch >=1.4.0 #Currently not avalaible for Windows
-    - onnx >=1.6.0
-    - torchvision >=0.9.0 #Currently not avalaible for Windows
-    - __unix  # [unix]
+    - pytorch  >=2.0.0
+    - onnx >=1.16.0
+    - torchvision >=0.15.0
 
 test:
   imports:
@@ -33,7 +32,7 @@ test:
     - pip check
   requires:
     - pip
-    - python {{ python_min }}
+    - python {{ python_min }}.*
 
 about:
   home: https://github.com/ToriML/onnx2pytorch
